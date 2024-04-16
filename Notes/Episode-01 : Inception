@@ -1,0 +1,48 @@
+Episode 1 : Inception (Talks on the core of React and the Environment) - The Beginning
+
+Part 1: Basics & Hello World From HTML, JS, REACT =>
+
+Commit 1:
+Browser Used: Google Chrome
+VS Code uses extension called as Emet.
+we can generate plain html using => html:5 & press tab or ! & press tab  
+the shortcuts are applicable only for the .html and .jsx files , can not work for .js file 
+VS Code Editor is one of the best IDE Tool for frontend development
+
+Commit 2:
+the createElement,innerHTML, appendChild, etc. properties used in js are the superpowers which browsers undertands as they are already have in its JS Engine.  
+But browser does not configured to understand the React, so we need some configuration for it.
+
+Commit 3:
+What is CDN ?
+CDN is Content Delivery Network, a group of servers that caches the assets to the nearest proxy servers near to end users and serve quickly to required end. 
+
+What is crossorigin?
+crossorigin is an html script attribute which is used to receive assets from some other server/domain instead of origin. 
+it sets the mode of request to HTTP CORS (Cross-Origin Resource Sharing), so as to allow resource from other domains.
+
+why there are two files : react.development.js & react-dom.development.js ?
+These files are the source code for react written by facebook developers.
+react.development.js => Core file of React Library
+react-dom.development.js => to bridge the gap b/w react and browser 
+For Mobile React i.e. React Native, For React 3D we have other files but the react.development.js is the common file.
+
+We can check in the console, now the object named React and ReactDOM is being created i.e. React for browser got configured sucessfully.
+
+Significance of {} used in React.createElement and other methods of App.js file 
+{} => In this we can provide any attribute to the element, here its h1
+createElement gives the object with properties as props (id,xyz,children:Hello World From React)
+render method is creating the tags 
+most costly operation on the webpage is the updates in DOM tree , i.e. interacting with the UI , and all these libraries are trying to make it as much optimized as possible.
+
+
+Git Commands =>
+git init
+git branch -M main (switch from master to main)
+git add .
+git commit -m 'episode-1'
+git remote add origin git@github.com:ragsns68/Learn-React
+git push origin main
+
+Difference b/w git and github? 
+git (Version Control System) manages the files of our project whereas github (A cloud service) manages the git repositories .
