@@ -1,0 +1,53 @@
+Creating an production ready app by ourselves (not using npx create-react-app)
+
+To create an production ready and fast application we need many other packages. React helps but only to some extent.
+
+Packages Required:
+1. npm : npm does not stand for node package manager, it doesn't have any full form. It is a package manager. Its one of the biggest repository of packages/dependencies. Contains all the packages.
+
+Setting up the npm in project :
+1. npm init : This will create the package.json file which is a configuration for npm.
+Why do we need package.json ?
+Here it takes care of the version of dependencies/packages.
+
+
+Bundler (parcel,webpack,vite): Before sending app to production the requriment is to create our whole code as minified, chunked , bundled together, needs to be cached, compressed, clean this is where bundler can be used.
+
+A bundle is some related code packaged into a single file. If you don't want all of your code be put into a single huge bundle you will split it into multiple bundles which are called chunks in webpack terminology.
+
+two types of dependencies: dev and normal
+dev dependency: generally require in development phase (npm i -D parcel)
+normal dependency : used in production also
+
+On bundler creation one file and one folder gets created : package-lock.json and node_modules folder
+significance of package-lock.json : locks the exact version of all the dependencies,transitive dependency , any update in version will reflect here, the package.json won't change.
+node_modules : Database, collection of all the dependencies. 
+integrity in package-lock: It is hash, sha512 hash takes care that whatever versions are installed in development machine, should be there in all the environments. : This is the saucery behind code is working in dev env. but not working in production.
+
+D stands for devDependencies. 
+Significance of tilde(~) and caret(^) : ~ locks the major version updates whereas ^ locks the minor version updates. 
+It is safe to use ^ with the version number.
+
+Why so many folders in node_modules ? 
+Parcel as a project has their own dependencies, and the dependencies has their own dependencies known as transitive dependencies.
+Parcel uses babel and many other libraries.
+
+if we have package-lock.json and package.json than we can recreate the node_modules folder.So its crucial to put both the files in gitHub. 
+So that we can ignore the node_modules but we can create when required. 
+Anything which can be recreated should not be puched to git.
+
+npm v/s npx : npm is used to install a package whereas npx is for executing a package
+npx parcel index.html => executing parcel hosts our application of localhost server, run the application on new server
+
+
+CDN links are not preferred way to install react and react-dom. 
+Because through cdn links we have version dependency , from the external server : unpkg.com, and in future if react changes the version than also we need to change the dependency.So its better to have react in node_modules in local only , more easy to use.
+
+npm install react or npm i react (i is shortform for install)
+npm i react-dom
+than we can remove cdn links
+
+
+
+
+
