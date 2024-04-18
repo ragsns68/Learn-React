@@ -1,0 +1,40 @@
+Parcel Use : 
+Without CDN if we want to use the React than we should made the required imports and type as module in the script tag so that the browser script understands the import statement.
+
+Without the parcel the code was not ruuning ? => CORS issue
+
+#parcel : 
+- creates dev build
+- host the application on local server
+- automatically refreshing the page also on save i.e. HMR (Hot Module Replacement)
+- HMR using File Watching Algorithm - written in C++ i.e keep track of all the files
+- Caching - Fast Build i.e. Reduces the built time
+- Image Optimization , The most expensive thing on browser is the loading of images which can be optimized using parcel
+- Minification 
+- Bundling
+- Compress
+- Consistent Hashing :ParcelJS utilizes a consistent hashing algorithm to generate unique filenames for cache busting. This ensures that whenever you make changes to your code, the browser fetches the latest version from the server, eliminating the need for users to manually clear their browser cache.
+- Code Splitting : Splitting the bundle when the bundle file becomes too large.
+- Differential Bundling i.e provide support to all kinds of browsers, old browsers too. (Different type of bundle with different type of app).
+- Diagnostic =>  Beautiful Errors after Diagnosis
+- Error handlings/suggestion 
+- gives a way to host the application on https
+- tree shaking algorithm : remove unused code
+- different dev and prod builds
+https://parceljs.org/ => Beautiful Documentation 
+
+how parcel is fast ? Because it has parcel-cache
+
+npx parcel index.html => For dev build
+npx parcel build index.html => For prod build
+
+Production build takes a bit longer compared to the development build because of the extra minification process for prod build
+The dist folder has all the build files. (important files are .html, .js and .css)
+using parcel-cache and dist we can deploy all the applications.
+
+
+browserslist : we can add this dependency to support the older versions of various browsers. 
+https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
+Ex: "browserslist":{
+    "last 2 Chrome version"
+}
