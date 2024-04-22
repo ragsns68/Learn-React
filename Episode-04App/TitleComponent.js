@@ -1,0 +1,4 @@
+export function TitleComponent(){
+   return <h1>Hello title</h1>
+}
+

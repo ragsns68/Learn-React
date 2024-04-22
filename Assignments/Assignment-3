@@ -1,0 +1,46 @@
+Episode-03-Laying the Foundation
+
+Theory:
+1. JSX : Javascript XML is a Javascript syntax extension allows to write HTML like code in js file.
+eg : 
+const ele = <h1>Hello JSX</h1>
+
+2. React.createElement vs JSX : Both returns the object just writing the jsx is more simpler than with React.createElement. These are two ways of 
+creating the components.
+const heading = React.createElement("h1",{},"Hello Create Element")
+or 
+const heading = <h1>Hello JSX</h1>
+
+3. Benefits of JSX :
+ Expressive : More intuitive to read & write by developers.
+ Type Safety : tools like typescript can provide type checking on jsx elements.
+ Compile Time Error : Helps in early caught of Error
+ Integration with tools : Easily integrates with tools like Babel , tranforms jsx into js for execution.
+
+4. Behind the scenes of JSX : JSX gets convert into React.createElement (object) by babel during the build process.
+
+5. Babel & parcel role in JSX : 
+Babel uses as a transpiler (converts jsx into browser understandable form i.e. JS & HTML).
+parcel is uses as a bundler to minimize the code and make the application production ready.
+
+6. Components : Building block of a react app , can be reused across different parts of an application. 
+
+7. Functional Components : A normal js function returning JSX.more preferred way of writing jsx and always starts with capital letter.
+function Welcome({ name }) {
+  return <h1>Hello, {name}!</h1>;
+}
+
+ -Composing components : combining multiple components to create complex UIs.
+ function Hello(){
+    return  (
+    <Welcome name="Ali"/>
+    <Welcome name="Harsha"/>)
+ }
+
+ 8.{TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in JSX
+{<TitleComponent/>} , {<TitleComponent></TitleComponent>}  and  {TitleComponent()} all instantiates an object and render the component.
+whereas {TitleComponent} does not instantiate an object, instead can be passes as a props.
+
+
+
+
