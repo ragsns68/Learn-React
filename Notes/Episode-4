@@ -1,0 +1,27 @@
+How to think on creating an app like Swiggy or Zomato ? - The Thought Process Behind
+1. Explore the app
+2. Planning is most important --> Exactly know what  NEVER START CODING DIRECRTLY WITHOUT PlAN
+
+PLANNING : How are app will look like ? Once we have a visual picture in our head on how things will look up its easy to write code
+
+UI Design Planning : 
+Webpage --> Header-Top ---> Logo(Left) --> Links (Home,About Us,Cart)-Right -->Body(Search Bar,Card- Image,Rating,)-Centre ---> Footer(Copyright,)-Bottom
+
+Coding Planning :
+3 Components
+AppLayout wrapper
+-Header 
+  -logo
+  -Nav Items
+-Body
+  -Search
+  -RestaurantContainer
+   -RestaurantCard
+-Footer
+  -Copyright
+  -Links
+  -Address
+  -Contact
+
+  what are components ?
+  Components are independent and reusable bits of code. Same as javascript functions returns the JSX (React Element)

@@ -1,7 +1,7 @@
 Parcel Use : 
 Without CDN if we want to use the React than we should made the required imports and type as module in the script tag so that the browser script understands the import statement.
 
-Without the parcel the code was not ruuning ? => CORS issue
+Without the parcel the code was not running ? => CORS issue
 
 #parcel : 
 - creates dev build
@@ -38,3 +38,8 @@ https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
 Ex: "browserslist":{
     "last 2 Chrome version"
 }
+ "browserslist": {    
+    "production" : ["last 2 Chrome versions"],
+    "development" : ["last 1 Chrome version"]
+   }
+   browserslist configuration should be at the top level of the package.json, not within "dependencies" or "devDependencies". If browserslist is nested within "dependencies", tools like Babel or PostCSS won't recognize it correctly.

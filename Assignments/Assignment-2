@@ -1,0 +1,83 @@
+Episode - 02 : Igniting the App
+
+THEORY
+1. What is NPM?
+NPM is a package manager which tracks and manages approx 8 lacs of packages. Its full form is not Node Package Manager.
+It is world's largest software registry(library) maintained by Microsoft. Repository for all the packages required in JS.
+
+2.What is parcel/webpack ? Why do we need it ?
+Parcel/webpack is a bundler , a package uses to create an production ready application . The parcel provides the transpiler and many other packages which are required to make the browser undertand the code. 
+Compress and minify the code for prod env. --> Optimize the performance
+It comprises of many features like HMR, transplie ,etc.
+
+3.What is .parcel-cache?
+When we execute the parcel bundler the directory named .parcel-cache gets created which stores the immediate build results. Hence provides improved speed for the development build and optimize the resource usage.
+
+4. What is npx?
+npx allows to execute any package available in the npm. Even if the package is not installed in the developer machine
+
+5.What is difference b/w dependencies and devDependencies ?
+dependencies : the packages which are required on dev and prod both env. e.g. : react, react-dom
+devDependencies : required only during the development process. e.g. parcel
+
+6. What is tree shaking ?
+Method to optimize the performance of the application by eliminating the unused code while converting multiple js file into a single file.
+
+7. What is Hot Module Replacement ?
+Auto reload of page in browser on saving
+
+8.List down your favourite 5 superpowers of Parcel and describe any 3 of them in your
+own words.
+1. Transplie     : Converts jsx into html and js, the browser understandable format
+2. HMR           : page reload on save
+3. Tree Shaking  : removing the unnecessary code from the application.
+
+9. What is `.gitignore`? What should we add and not add into it?
+gitignore is a file in git repository to ignore the files which are unnecessary in the production, which can be regenerated. e.g: node_modules, .parcel-cache,etc.
+
+10. What is the difference between `package.json` and `package-lock.json`
+package.json : Keeps the metadata related to project like name , dependencies,version,scripts and configuration details.
+package-lock.json : Lock files should exist so that anyone installing the dependencies get the exact same version.
+
+If package-lock.json is not present in the project than because of caret (symbolises to upgrade minor version), the package.json might have the upgraded version so in dev machine on clone it may come as the new version. To have same version every m/c we use package-lock.json. 
+
+Semantic Versioning : It's a way for numbering the software releases. E.g:
+18.2.0 => 18 : Major Version, 2 : Minor Version, 0 : Patch Version
+
+11. Why should I not modify package-lock.json file ?
+to ensure consistency and reproducibility in all the env.
+
+12. What is node_modules ? Is it a good idea to push that on git ?
+node_modules is a directory which contains the code/data related to all the dependencies required in react project. Its not an good idea to push it on git as we can recreate it using package.json and package-lock.json file and do npm i.
+
+13. what is the dist folder ?
+dist folder contains the minimized and compressed version of the source code. It gets created when we install a bundler like parcel.
+
+14. what is browserslist ?
+browserslist is a dependency to support the older versions of various browsers. 
+
+Ex: "browserslist":{
+    "last 2 Chrome version"
+}
+Doc: https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z 
+
+15. Read about different bundlers : vite, webpack, parcel
+vite :  A fast build tool that helps you develop js apps quickly with instant updates when you make changes.
+webpack : A tool that takes your js files and their dependencies, then compiles them into a single optimized code.
+parcel : A build tool that automatically bundles and optimizes the code with little or no setup required.
+
+16. Read about ^(caret) and ~(tilde)
+^ : upgrade minor and patch release of the version 
+~ : upgrade patch release of the version
+Always better to use ^ than ~.
+
+17. Read about script types in html (MDN Docs)
+script tag is used to run js code in web pages. The type attribute specifies the MIME (Multipurpose Internet Mail Extension) type - nature/format of the document indicates how the browser should interpret the code.
+Understanding of script type is important for performance, compatiblity, and modularization in web development.
+
+Some script types are :
+1. default => type="text/javascript" treated as js(ECMAScript)
+2. type="module" treated as ES6 module, allow the usage of import and export, automatically uses strict mode.
+3. type="nomodule" , the script is executed only by browsers that don't support modules. This is useful for providing fallback scripts for older browsers.
+4. type="text/vbscript"
+5. type="text/x-coffeescript"

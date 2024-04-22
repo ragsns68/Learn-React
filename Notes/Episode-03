@@ -10,7 +10,7 @@ Writing script for the execution of dev and prod builds :
  "scripts": {
     "test": "jest",
     "start":"parcel index.html",         //development build
-    "build":"build parcel index.html"   //production build
+    "build":"parcel build index.html"   //production build
   },
 now we can execute npx parcel index.html with npm start or npm run start
 and npx parcel build index.html with npm run build

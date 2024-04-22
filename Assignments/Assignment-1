@@ -1,0 +1,187 @@
+Episode - 01 : Inception
+THEORY =>
+1.What is Emmet ?
+Emmet is an inbuilt VS Code extension uses to provide the abbreviation(short hands) so as to save time. 
+E.g: ! & tab creates the basic html document.
+
+2. Difference b/w library and framework ?
+Library : A collection of pre-written code that can be used to perform specific tasks and can be used in any part 
+of application or any other project.Eg: React JS, Vue
+
+Framework : A collection of pre-written code than provides a structure for developing a software application. Eg:Angular Js, Bootstrap a CSS Framework, .NET
+
+3.What is CDN ? Why do we use it ?
+CDN is Content Delivery Network , a group of geographically distributed server uses to deliver the content to the end user.
+Quick, cheap, reliable and secure, cost savings.
+
+4.Why is React known as React ?
+React is known as react as it reacts only when there are changes in the component's state or props.
+
+5.What is crossorigin is script tag ?
+crossorigin is an attribute in script tag used to send request for resource sharing from another domain/server. 
+Sets the mode of request to an HTTPS CORS Request.(Cross-Origin Resource Sharing )
+
+6.What is difference b/w React and ReactDOM?
+To work with React in the browser we need 2 libraries: React and ReactDOM
+React: https://cdnjs.com/libraries/react
+ReactDOM: https://cdnjs.com/libraries/react-dom
+
+React is the library responsible for crearting views (UI)
+ReactDOM is the library responsible to render the UI on the browser.
+
+7. What is difference between react.development.js and react.production.js files via CDN?
+react.development.js=> Uses to create a build for the development environment
+react.production.js => Uses to create a build for the production environment
+Diff : In production env. the code compression and minification takes place which optimizes the performance.
+
+8.what is async and defer ?
+async and defer are the Boolean attributes use to load the external script.
+When the web page loads the browser do two things : HTML Parsing and loading of scripts.
+
+Normal Case: Html parsing --> As soon as the script tag come, parsing stops browser starts fetching the script and execute it once fetching and excution completes than the parsing again starts (long blocking period)
+<script src="">
+
+async : HTML Parsing --> As soon as the script tag come, parsing still runs and in paralle browser starts fetching the script after fetching parsing blocks and excution runs than the parsing again starts (only execution time parsing blocked)
+<script async src="">
+
+defer : As soon as the script tag come, parsing still runs and in parallel the fetching of script starts but it ignores the execution of script tag, after completion of parsing the script executes.
+<script defer src="">
+
+NOTE: async is useful when we want to include modular independent skill.
+defer is useful when  we have multiple dependent scripts as it maintains the order of the execution of script
+
+CODING =>
+1. Set up all the tools in your laptop
+○ VS Code : https://code.visualstudio.com/
+○ Chrome :
+○ Extensions of Chrome :
+
+2. Create a new Git repo (Done)
+
+3.Build your first Hello World program using, (Done)
+○ Using just HTML
+○ Using JS to manipulate the DOM
+○ Using React
+■ use CDN Links
+■ Create an Element
+■ Create nested React Elements
+■ Use root.render
+
+4.Push code to Github (Theory as well as code)
+
+5.Learn about Arrow Functions before the next class
+
+-------------******************  Arrow Functions -------------****************** 
+
+Anonymous functions use as the shorthand for writing JS Functions. Introduced is ES6 (Eccma Script - 2015).Often assigned to some variable
+Also known as Lambda Function.Provides lexical this binding.
+
+const b = () => console.log("b called"); console.kog("again calling")
+const obj={
+    name:'raja'
+    age:25,
+    show: function(){
+        let that=this
+        console.log(this)          //refering the obj
+        setTimeout(function(){
+            console.log(this.name)      //refering the window object
+            console.log(that)           //refer the obj
+        },2000)
+        setTimeout(()=>{
+            console.log(this)      //On using arrow function , this gets the lexical binding and starts refering the parent object        which in this case is obj.
+        },2000)
+    }
+}
+
+
+References:
+- https://beta.reactjs.org/apis/react/createElement
+- https://www.youtube.com/watch?v=IrHmpdORLu8
+
+
+****************------------------------Function Statement aka function declaration****************------------------------
+
+a()   // a called
+b()   // b called
+
+function a(){
+    console.log("a called")
+}
+a() // a called
+b() // b called
+
+****************------------------------Function Expression****************------------------------
+
+a()   // a called
+b()   //error : b is not a function as b is being taken as variable which should be first initialized than only called.
+
+var b=function(){
+    console.log("b called")    <-- Anonymous function
+}
+
+a() // a called
+b() // b called
+
+Both are called the same way : a() , b ()
+Diff: Hoisting - we can't call before its being initialized when its working as variable/function expression
+whereas simple functions can be called even before i
+
+var,let and const hoisting difference =>
+console.log(a)
+var a=20  //undefined
+let a =20 // Initialization error
+const a=20 // Initialization error
+
+****************------------------------Anonyous Functions****************------------------------
+
+A function with no name of its own
+function(){
+                        //Syntax Error: Function statement require a function name
+}
+
+-------------******************Named Function Expression****************------------------------
+const a=function xyz(){
+    console.log("a called")
+}
+
+a() // a called
+xyz() //Reference Error : xyz is not defined. As its not defined in the global scope but as its created in local scope so we can use it inside the function.
+
+const a=function xyz(){
+    console.log(xyz)    //f xyz(){ console.log(xyz)
+    }
+    console.log(xyz())  //RangeError: Maximum call stack size exceeded
+}
+
+-------------****************** Difference b/w parameters and arguments -------------*******************************
+
+var b = function (param1,param2){
+    console.log("b called")
+}
+
+b(arg1,arg2)
+
+param1, param2 are called as local variables/identifier/label well known as PARAMETERS
+
+arg1, arg2 are called as ARGUMENTS.
+
+-------------****************** First Class Functions ------------------------------********************************
+
+The ability to use function as value is called as First Class Functions or First Class Citizens.
+So the functions can be assigned to any other variable or passed as an argument or can be returned by another function.
+
+const a = function (){
+return function xyz(){
+
+}
+}
+console.log(a())
+
+
+Temporal Dead Zone : An area where a variable is inaccessible until its initialization. eg:
+
+console.log(z)   //z is in temporal dead zone
+var z=10
+console.log(z)   //z is not in temporal dead zone
+
+
