@@ -1,2 +1,5 @@
 {TitleComponent} vs {<TitleComponent/>} vs
 {<TitleComponent></TitleComponent>} in JSX ?
+
+The babel is used to convert JSX into React.createElement. Than the createElement gives an js object which gets converted into tag on render().
+Is the translation required for react too ? I mean for createElement also ?
